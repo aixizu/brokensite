@@ -30,14 +30,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .imageGrid {
-  padding-top: 3.3vw;
-  padding-bottom: 3.3vw;
-  padding-left: 6vw;
-  padding-right: 6vw;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: min-content;
   grid-gap: 80px;
+  grid-template-columns: 20vw 20vw; /* width of each div */
+  grid-template-rows: 20vw 20vw; /* must be equal to width to keep them square */
+  margin: 0 auto; /* add margin auto on the left and right to centre element */
+  width: calc(40vw + 80px); /* margin: 0 auto requires a specified width to work, so the total width is 2*(columnwidth) + gap */
 }
 
 /* a {
@@ -49,6 +47,8 @@ body::-webkit-scrollbar-thumb {
   height: 100%;
   position: relative;
   justify-content: center;
+  background-size: cover;
+  background-position: center;
 }
 
 .gallery-item .image {
