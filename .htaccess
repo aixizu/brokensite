@@ -1,0 +1,29 @@
+Options -MultiViews +SymLinksIfOwnerMatch -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+
+    # Some hosts need a RewriteBase specification.
+    RewriteBase /
+  
+  # RewriteRules must have the site forward directory (The part you want to be present in the URL and the file location)
+  # An example of this is here.
+  # It's better to have it set in a PHP forwarder for better accessability and privacy but this should work fine
+  
+  # Start Example
+  ErrorDocument 404 /404.html
+  RewriteRule ^london$ pages/london.html
+  RewriteRule ^bournemouth$ pages/bournemouth.html
+  RewriteRule ^foodbank$ pages/foodbank.html
+  RewriteRule ^miami$ pages/miami.html
+
+  
+  # End Example
+</IfModule>
+
+# This allows for files to be sent to the client at insanely fast rates
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE application/x-javascript text/css text/html text/xml
+</IfModule>
+
+
